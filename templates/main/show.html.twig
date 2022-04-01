@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Page annonce'%}
+{% block body %}
+
+	<div class="container w-50">
+		<h1>{{ annonce.title}}</h1>
+		<img src="{{ (annonce.imageName ? vich_uploader_asset(annonce) : asset('uploads/placeholder.jpg'))  | imagine_filter('annonce_thumbnail') }}" alt="{{ annonce.title }}" class="h-75" >
+		
+		<p class="lead">
+			{{annonce.content}}
+		</p>
+		<a>Contacter le vendeur : {{ annonce.users.email}}</a>
+	</div>
+{% endblock %}

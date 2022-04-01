@@ -1,0 +1,15 @@
+{% extends 'users.html.twig' %}
+
+{% block title %}Modification du Profil de {{app.user.name}} {{app.user.firstname}}{% endblock %}
+
+{% block body %}
+<div class="container grix xs4">
+<h1 class="col-xs4">Modification du Profil de {{app.user.name}} {{app.user.firstname}}</h1>
+
+   {{ form_start(form) }}
+   {{ form_widget(form) }}
+   <button class="btn btn-primary">Valider</button>
+   {{ form_end(form) }}
+   
+</div>
+{% endblock %}

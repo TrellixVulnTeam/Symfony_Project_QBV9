@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo&family=Josefin+Sans&display=swap');
+
+body {
+    font-family: 'Cardo', serif;
+}
+h1 {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+#annonces > fieldset > div > a:nth-child(3) > img {
+    width: 200px;
+    height: auto;
+}
+body > nav {
+    color: #2E3192;
+}
+nav {
+    background-color: rgb(250, 250, 250);
+}
+footer {
+    background-color: rgb(250, 250, 250);
+    color: #2E3192;
+}
+body > main > div > h1 {
+    font-size: 40px;
+    text-align: center;
+    padding-top: 100px;
+    color: #2E3192;
+}
+body > main > div > div > div  {
+    padding-bottom: 50px;
+}
+body > main > div  {
+    padding-bottom: 100px;
+}
+#buttonVoir {
+    color: #2E3192;
+    text-decoration: none;
+}
+body > main > div > div {
+    padding-bottom:20px ;
+}
+body > main > h1 {
+    text-align: center;
+}

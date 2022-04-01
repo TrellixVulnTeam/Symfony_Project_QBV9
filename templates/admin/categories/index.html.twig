@@ -1,0 +1,30 @@
+{% extends 'homeUsers.html.twig' %}
+
+{% block title %}Gestion catégorie{% endblock %}
+
+{% block body %}
+<h1>Gérer les catégories</h1>
+<div class="container w-50">
+<a href="{{ path('admin_categories_ajout') }}" class="btn shadow-1 rounded-1 blue">Ajouter une catégorie</a>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Nom</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for categorie in categories %}
+            <tr>
+                <td>{{ categorie.id }}</td>
+                <td>{{ categorie.name }}</td>
+                <td class="text-center">
+                    <a href="{{ path("admin_categories_edit", { id: categorie.id })}}" class="btn blue">Modifier</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

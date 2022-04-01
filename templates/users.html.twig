@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block navProfile %}
+<ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ path('app_users')}}">Profil</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('users_annonces_ajout')}}">Ajouter une annonce</a>
+        </li>
+    </ul>
+{% endblock %}

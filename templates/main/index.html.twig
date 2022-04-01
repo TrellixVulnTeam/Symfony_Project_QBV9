@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello{% endblock %}
+
+{% block body %}
+
+<div class="container">
+	<h1>Toutes les annonces</h1>
+
+	{% for message in app.flashes('success') %}
+	<div class="alert alert-success" role="alert">{{ message }}</div>
+	{% endfor %}
+	<div class="row">
+		{% for annonce in annonces %}
+		<div class="col-md-4">
+			<div class="card ">
+				<div class="card-body">
+					<img src="{{ (annonce.imageName ? vich_uploader_asset(annonce) : asset('uploads/placeholder.jpg'))  | imagine_filter('annonce_thumbnail') }}"
+						alt="{{ annonce.title }}">
+					<h2 class="card-title">
+						{{annonce.title}}
+					</h2>
+					<p>{{ (annonce.content ) | u.truncate(50,'...')}}</p>
+					<a href="{{ path('app_main_show', {id: annonce.id}) }}" class="btn"
+						id="buttonVoir">Voir l'annonce</a>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}
