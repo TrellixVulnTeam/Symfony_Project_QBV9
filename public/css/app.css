@@ -3,6 +3,7 @@
 body {
     font-family: 'Cardo', serif;
 }
+
 h1 {
     font-family: 'Josefin Sans', sans-serif;
 }
@@ -14,32 +15,47 @@ h1 {
     align-items: center;
     justify-content: center;
 }
-body > nav > div {
+
+body>nav>div {
     color: #2E3192;
 }
+
 footer {
     color: #fff;
     background-color: #2E3192;
+    position: static;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
-body > main > div > h1 {
+
+body>main>div>h1 {
     font-size: 40px;
     text-align: center;
     padding-top: 100px;
     color: black;
 }
-body > main > div > div > div  {
+
+body>main>div>div>div {
     padding-bottom: 50px;
 }
-body > main > div  {
+
+body>main>div {
     padding-bottom: 100px;
 }
-body > main > div > div {
-    padding-bottom:20px ;
+
+body>main>div>div {
+    padding-bottom: 20px;
 }
-body > main > h1 {
+
+body>main>h1 {
     text-align: center;
 }
+
 #buttonVoir {
     background-color: #2E3192;
     color: #fff;
+}
+body > main > div {
+    padding-top: 100px;
 }

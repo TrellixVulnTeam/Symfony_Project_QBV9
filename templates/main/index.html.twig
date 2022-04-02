@@ -21,9 +21,9 @@
 					<h3 class="card-title">
 						{{annonce.title}}
 					</h3>
-					<p>{{ (annonce.content ) | u.truncate(50,'...')}}</p>
-					<a href="{{ path('app_main_show', {id: annonce.id}) }}" class="btn"
-						id="buttonVoir">Voir l'annonce</a>
+					<p>{{ (annonce.content ) | u.truncate(20,'...')}}</p>
+					<a href="{{ path('app_main_show', {id: annonce.id}) }}" class="btn" id="buttonVoir">Voir l'annonce</a>
+					
 				</div>
 			</div>
 		</div>
