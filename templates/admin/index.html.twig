@@ -15,28 +15,25 @@
     <div class="col-xs1">Email :</div>
     <div class="col-xs3">{{app.user.email}}</div>
     <div class="col-xs4">
-        <a href="{{ path('users_profile_edit') }}" class="btn shadow-1 rounded-1">Modifier le profil</a>
-        <a href="{{ path('users_password_edit') }}" class="btn shadow-1 rounded-1">Modifier le mot de passe</a>
-        <a href="{{ path('admin_categories_ajout') }}" class="btn shadow-1 rounded-1">Ajouter une catégorie</a>
-        <a href="{{ path('admin_categories_home') }}" class="btn shadow-1 rounded-1">Voir toutes les catégories</a>
-        <a href="{{ path('app_users') }}" class="btn shadow-1 rounded-1">Passer en mode Utilisateur</a>
+        <a href="{{ path('users_profile_edit') }}" class="btn btn-info">Modifier le profil</a>
+        <a href="{{ path('users_password_edit') }}" class="btn btn-warning">Modifier le mot de passe</a>
+        <a href="{{ path('admin_categories_ajout') }}" class="btn btn-dark">Ajouter une catégorie</a>
+        <a href="{{ path('admin_categories_home') }}" class="btn btn-light">Voir toutes les catégories</a>
+        <a href="{{ path('app_users') }}" class="btn btn-success">Passer en mode Utilisateur</a>
     </div>
     <h3 class="col-xs4">Annonces de {{app.user.firstname}} {{app.user.name}} ({{ app.user.annonces|length }})</h3>
-    {% for annonce in app.user.annonces %}
-    <div class="card light-shadow-2 white">
-  <div class="card-image">
-    <img src="{{ (annonce.imageName ? vich_uploader_asset(annonce) : asset('uploads/placeholder.jpg'))  | imagine_filter('annonce_thumbnail') }}" alt="image" />
+  {% for annonce in app.user.annonces %}
+  <div class="card" style="width: 12rem; height:24rem;">
+    <img
+      src="{{ (annonce.imageName ? vich_uploader_asset(annonce) : asset('uploads/placeholder.jpg'))  | imagine_filter('annonce_thumbnail') }}"
+      class="card-img-top" alt="">
+    <div class="card-body">
+      <h5 class="card-title">{{annonce.title}}</h5>
+      <p class="card-text">{{annonce.categories}}</p>
+      <p class="card-text">{{annonce.content |u.truncate( 20 , '...')}}</p>
+      <a href="{{ path('app_annonce_delete', {id: annonce.id})}}" class="btn btn-danger">Supprimer</a>
+    </div>
   </div>
-
-  <div class="card-header">{{annonce.title}}</div>
-  <div class="divider"></div>
-  <div class="card-content">
-    {{annonce.content}}
-  </div>
-
-  <div class="card-footer">{{annonce.categories}}</div>
-  <a href="{{ path('app_annonce_delete', {id: annonce.id})}}" class="btn btn-danger btn-sm" tabindex="-1" role="button" aria-disabled="true">Supprimer</a>
-</div>
     {% endfor %}
 </div>
 {% endblock %}

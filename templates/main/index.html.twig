@@ -3,23 +3,24 @@
 {% block title %}Hello{% endblock %}
 
 {% block body %}
-
+<img data-ax="lightbox" data-lightbox-caption="menu caption" id="example-lightbox2" class="lightbox responsive-media" src="{{asset('images/LogoDealGames.svg')}}" alt="picsum2" />
 <div class="container">
 	<h1>Toutes les annonces</h1>
+	
 
 	{% for message in app.flashes('success') %}
 	<div class="alert alert-success" role="alert">{{ message }}</div>
 	{% endfor %}
 	<div class="row">
 		{% for annonce in annonces %}
-		<div class="col-md-4">
-			<div class="card ">
-				<div class="card-body">
+		<div class="col">
+			<div class="card" style="width: 17rem; height: 28rem;">
 					<img src="{{ (annonce.imageName ? vich_uploader_asset(annonce) : asset('uploads/placeholder.jpg'))  | imagine_filter('annonce_thumbnail') }}"
 						alt="{{ annonce.title }}">
-					<h2 class="card-title">
+				<div class="card-body">
+					<h3 class="card-title">
 						{{annonce.title}}
-					</h2>
+					</h3>
 					<p>{{ (annonce.content ) | u.truncate(50,'...')}}</p>
 					<a href="{{ path('app_main_show', {id: annonce.id}) }}" class="btn"
 						id="buttonVoir">Voir l'annonce</a>

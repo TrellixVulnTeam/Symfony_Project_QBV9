@@ -11,18 +11,12 @@ h1 {
     width: 150px;
     height: auto;
 }
-#annonces > fieldset > div > a:nth-child(3) > img {
-    width: 200px;
-    height: auto;
-}
-body > nav {
+nav {
+    opacity: 80%;
     color: #2E3192;
 }
-nav {
-    background-color: rgb(250, 250, 250);
-}
 footer {
-    background-color: rgb(250, 250, 250);
+
     color: #2E3192;
 }
 body > main > div > h1 {
