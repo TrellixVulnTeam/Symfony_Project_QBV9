@@ -30,7 +30,8 @@
       <h5 class="card-title">{{annonce.title}}</h5>
       <p class="card-text">{{annonce.categories}}</p>
       <p class="card-text">{{annonce.content |u.truncate( 20 , '...')}}</p>
-      <a href="{{ path('app_annonce_delete', {id: annonce.id})}}" class="btn btn-danger">Supprimer</a>
+      <a href="{{ path('users_annonces_edit', {id: annonce.id})}}" class="btn btn-warning btn-sm">Modifier</a>
+      <a href="{{ path('app_annonce_delete', {id: annonce.id})}}" class="btn btn-danger btn-sm">Supprimer</a>
     </div>
   </div>
   {% endfor %}
